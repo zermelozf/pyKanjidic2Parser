@@ -1,7 +1,7 @@
 '''
-Created on 11 août 2011
+Created on August 11th, 2011
 
-@author: apple
+@author: zermelozf
 '''
 import unittest
 

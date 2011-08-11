@@ -45,8 +45,8 @@ class ListKanji(ContentHandler):
                 lit = self.element['literal']
                 mea = self.element['meaning']
                 rea = self.element['reading']
-                lev = self.element['jlpt']
-                kanji = Kanji(literal=lit, meanings=mea, readings=rea, jlptLevel=lev)
+                jlp = self.element['jlpt']
+                kanji = Kanji(literal=lit, meaning=mea, reading=rea, jlpt=jlp)
                 self.kanjiList.append(deepcopy(kanji))
             self.element['literal'] = ''
             self.element['meaning'] = []

@@ -1,3 +1,3 @@
 A SAX parser for Jim Breen's KANJIDIC2 Japanese dictionary.
 
-The code is its current state is can be used for simple processing tasks  such as extracting JLPT lists from the Kanjidic2 file available at http://www.csse.monash.edu.au/~jwb/kanjidic2/ .
+The code is its current state can be used for simple processing tasks  such as extracting JLPT lists from the Kanjidic2 file available at http://www.csse.monash.edu.au/~jwb/kanjidic2/ .

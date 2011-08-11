@@ -6,18 +6,15 @@ Created on August 11th, 2011
 
 class Kanji:
 
-    def __init__(self, literal = '', meanings = [], readings = [], jlptLevel = 0):
-        self.literal = literal
-        self.meanings = meanings
-        self.readings = readings
-        self.jlptLevel = jlptLevel
+    def __init__(self, literal = '', meaning = [], reading = [], jlpt = 0):
+        self.element = {'literal':literal, 'meaning':meaning, 'reading':reading, 'jlpt':jlpt}
         
     def show(self):
-        print self.literal, " ( JLPT", self.jlptLevel, "): "
-        for m in self.meanings:
+        print self.element['literal'], " ( JLPT", self.element['jlpt'], "): "
+        for m in self.element['meaning']:
             print m, ",",
         print ""
-        for r in self.readings:
+        for r in self.element['reading']:
             print r, ",",
         print " "
         
