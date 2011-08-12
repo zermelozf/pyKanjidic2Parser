@@ -13,7 +13,6 @@ class ListKanji(ContentHandler):
     def __init__(self, searchElement, searchValue):
         self.searchElement = searchElement
         self.searchValue = searchValue
-        self.listOfAcceptedElements = ['literal', 'meaning', 'reading', 'jlpt']
         self.isElement = {'literal':0, 'meaning':0, 'reading':0, 'jlpt':0}
         self.element = {'literal':'', 'meaning':[], 'reading':[], 'jlpt':0}
         self.kanjiList = []
@@ -30,14 +29,14 @@ class ListKanji(ContentHandler):
             pass
             
     def characters(self, ch):
-        if self.isElement['literal']:
-            self.element['literal'] = ch
-        if self.isElement['jlpt']:
-            self.element['jlpt'] = int(ch)
-        if self.isElement['meaning']:
-            self.element['meaning'].append(ch)
-        if self.isElement['reading']:
-            self.element['reading'].append(ch)
+        for el in self.element:
+            if self.isElement[el] == 1:
+                if isinstance(self.element[el], str):
+                    self.element[el] = ch
+                elif isinstance(self.element[el], int):
+                    self.element[el] = int(ch)
+                elif isinstance(self.element[el], list):
+                    self.element[el].append(ch)
             
     def endElement(self,name):
         if name == 'character':
