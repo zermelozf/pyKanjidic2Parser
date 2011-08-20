@@ -12,8 +12,10 @@ class KanjiListToXmlFile:
         self.file = open(filepath, "w+")
         self.handler = XMLGenerator(self.file, 'utf-8')
         self.handler.startDocument()
+        self.handler.startElement('list', {})
         
     def __del__(self):
+        self.handler.endElement('list')
         self.handler.endDocument()
         
     def kanjiToXml(self, kanji):
