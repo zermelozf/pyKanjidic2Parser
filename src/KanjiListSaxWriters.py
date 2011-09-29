@@ -35,6 +35,7 @@ class KanjiListToXmlFile:
                     self.handler.characters(m)
                     self.handler.endElement(el)
         self.handler.endElement('character')
+        self.file.write('\n')
     
     def kanjiListToXml(self, kanjiList):
         for kanji in kanjiList:
